@@ -28,24 +28,27 @@ class ExceptionsTest {
 	//2. In the ExceptionMethods class, write a method called divide that takes
 	//   two doubles as parameters and returns their quotient as a double. This method 
 	//   should throw an IllegalArgumentException if the denominator is 0.0.
-	
+		
 	//3. Complete the JUnit test method to test the divide method.
 	@Test
-	public void testDivideByZeroException() {
-		
+	public void testDivideByZeroException() {	
+		try {
+			assertEquals(0.0, em.divide(10, 0.0));
+		}catch(IllegalArgumentException IAE) {
+			System.out.println("exception caught");
+		}
 	}
-	
 	//4. In the ExceptionMethods class, write a method called reverseString that takes a
 	//   String and returns the reverse of that String. It should throw an IllegalStateException
 	//   if the String passed in is empty
 	
 	//5. Complete the JUnit test method to test the reverseStringMethod.
 	@Test
-	public void testReverseString() {
-		
+	public void testReverseString() {		
+		try {
+			assertEquals("", em.reverseString(""));
+		} catch(IllegalArgumentException IAE) {
+			System.out.println("exception caught");
+		}
 	}
-	
-	
-	
-
 }
